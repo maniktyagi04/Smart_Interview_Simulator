@@ -11,7 +11,7 @@ router.get('/me', authenticate, AuthController.me);
 router.patch('/profile', authenticate, AuthController.updateProfile);
 
 // Google Auth
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'], session: false }));
 router.get(
   '/google/callback',
   passport.authenticate('google', { session: false, failureRedirect: '/login' }),
@@ -19,7 +19,7 @@ router.get(
 );
 
 // Facebook Auth
-router.get('/facebook', passport.authenticate('facebook', { scope: ['email'] }));
+router.get('/facebook', passport.authenticate('facebook', { scope: ['email'], session: false }));
 router.get(
   '/facebook/callback',
   passport.authenticate('facebook', { session: false, failureRedirect: '/login' }),
