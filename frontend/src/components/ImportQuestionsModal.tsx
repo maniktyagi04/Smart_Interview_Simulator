@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Download, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
-import axios from 'axios';
+import client from '../api/client';
 import { useAuth } from '../store/AuthContext';
 
 interface ImportQuestionsModalProps {
@@ -39,16 +39,13 @@ const ImportQuestionsModal: React.FC<ImportQuestionsModalProps> = ({ isOpen, onC
       // Parse tags
       const tagsArray = filters.tags.split(',').map(t => t.trim()).filter(t => t.length > 0);
 
-      const response = await axios.post(
-        'http://localhost:5005/api/questions/import/codeforces',
+      const response = await client.post(
+        '/questions/import/codeforces',
         {
           limit: Number(filters.limit),
           minRating: Number(filters.minRating),
           maxRating: Number(filters.maxRating),
           tags: tagsArray
-        },
-        {
-          headers: { Authorization: `Bearer ${token}` }
         }
       );
 

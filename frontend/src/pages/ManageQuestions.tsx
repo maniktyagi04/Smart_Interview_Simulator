@@ -9,7 +9,7 @@ import {
 import QuestionModal from '../components/QuestionModal';
 import ImportQuestionsModal from '../components/ImportQuestionsModal';
 import AdminSidebar from '../components/AdminSidebar';
-import axios from 'axios';
+import client from '../api/client';
 
 interface Question {
   id: string;
@@ -44,8 +44,7 @@ const ManageQuestions: React.FC = () => {
   const fetchQuestions = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5005/api/questions', {
-        headers: { Authorization: `Bearer ${token}` },
+      const response = await client.get('/questions', {
         params: {
           category: filterCategory !== 'ALL' ? filterCategory : undefined,
           status: filterStatus !== 'ALL' ? filterStatus : undefined,
@@ -72,9 +71,7 @@ const ManageQuestions: React.FC = () => {
 
   const handleCreateQuestion = async (data: Partial<Question>) => {
     try {
-      await axios.post('http://localhost:5005/api/questions', data, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await client.post('/questions', data);
       fetchQuestions();
     } catch (error) {
       console.error('Failed to create question:', error);
@@ -85,9 +82,7 @@ const ManageQuestions: React.FC = () => {
   const handleUpdateQuestion = async (data: Partial<Question>) => {
     if (!selectedQuestion) return;
     try {
-      await axios.put(`http://localhost:5005/api/questions/${selectedQuestion.id}`, data, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await client.put(`/questions/${selectedQuestion.id}`, data);
       fetchQuestions();
     } catch (error) {
       console.error('Failed to update question:', error);
@@ -98,9 +93,7 @@ const ManageQuestions: React.FC = () => {
   const handleDeleteQuestion = async (id: string) => {
     if (!window.confirm('Are you sure you want to delete this question?')) return;
     try {
-      await axios.delete(`http://localhost:5005/api/questions/${id}`, {
-        headers: { Authorization: `Bearer ${token}` }
-      });
+      await client.delete(`/questions/${id}`);
       fetchQuestions();
     } catch (error) {
       console.error('Failed to delete question:', error);

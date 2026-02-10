@@ -48,7 +48,7 @@ export class AuthController {
         const user = (req.user as unknown) as { id: string, email: string, role: string };
        if (!user) {
          console.error('No user in req.user');
-         return res.redirect('http://localhost:5173/login?error=Authentication failed');
+         return res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:5173'}/login?error=Authentication failed`);
        }
 
        console.log('User authenticated:', user.id);
@@ -61,7 +61,7 @@ export class AuthController {
        
        console.log('Redirecting to login with token');
        // Redirect to frontend login page to handle token storage
-       res.redirect(`http://localhost:5173/login?token=${token}`);
+       res.redirect(`${process.env.FRONTEND_URL || 'http://localhost:5173'}/login?token=${token}`);
     } catch (error) {
        console.error('Social Callback Error:', error);
        next(error);
