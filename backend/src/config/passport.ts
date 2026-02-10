@@ -12,9 +12,9 @@ const prisma = new PrismaClient();
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.GOOGLE_CLIENT_ID || 'your-google-client-id',
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || 'your-google-client-secret',
-      callbackURL: `${process.env.BACKEND_URL || 'http://localhost:5005'}/api/auth/google/callback`,
+      clientID: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+      callbackURL: `${process.env.BACKEND_URL}/api/auth/google/callback`,
       passReqToCallback: true,
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -64,9 +64,9 @@ passport.use(
 passport.use(
   new FacebookStrategy(
     {
-      clientID: process.env.FACEBOOK_APP_ID || 'place-holder',
-      clientSecret: process.env.FACEBOOK_APP_SECRET || 'place-holder',
-      callbackURL: `${process.env.BACKEND_URL || 'http://localhost:5005'}/api/auth/facebook/callback`,
+      clientID: process.env.FACEBOOK_APP_ID || '',
+      clientSecret: process.env.FACEBOOK_APP_SECRET || '',
+      callbackURL: `${process.env.BACKEND_URL}/api/auth/facebook/callback`,
       profileFields: ['id', 'displayName', 'emails', 'photos'],
     },
     async (accessToken, refreshToken, profile, done) => {
