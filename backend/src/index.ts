@@ -7,6 +7,7 @@ console.log('-----------------------------');
 
 import express from 'express';
 import cors from 'cors';
+// CRITICAL: Import passport BEFORE routes to ensure strategies are registered
 import passport from './config/passport';
 import authRoutes from './api/routes/auth.routes';
 import questionRoutes from './api/routes/question.routes';
