@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import passport from 'passport';
+import passport from '../../config/passport'; // CRITICAL: Use configured instance with strategies
 import { AuthController } from '../controllers/auth.controller';
 import { authenticate } from '../../middleware/auth.middleware';
 
