@@ -11,7 +11,8 @@ router.get('/me', authenticate, AuthController.me);
 router.patch('/profile', authenticate, AuthController.updateProfile);
 
 // Google Auth
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'], session: false }));
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'], session: false, state: false } as any));
 router.get(
   '/google/callback',
   passport.authenticate('google', { session: false, failureRedirect: '/login' }),
