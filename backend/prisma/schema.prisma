@@ -1,0 +1,156 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 String             @id @default(uuid())
+  email              String             @unique
+  password           String?
+  name               String
+  role               Role               @default(STUDENT)
+  googleId           String?            @unique
+  facebookId         String?            @unique
+  avatar             String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  scheduledInterview Json?
+  status             UserStatus         @default(ACTIVE)
+  sessions           InterviewSession[]
+}
+
+model Question {
+  id               String              @id @default(uuid())
+  type             InterviewType       @default(TECHNICAL)
+  domain           Domain
+  difficulty       Difficulty
+  content          String
+  idealAnswer      String
+  keyConcepts      String
+  rubric           String
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  category         QuestionCategory
+  evaluationNotes  String?
+  externalId       String?
+  externalSource   String?
+  problemStatement String
+  source           QuestionSource      @default(ADMIN)
+  status           QuestionStatus      @default(DRAFT)
+  title            String
+  topic            String
+  sessions         InterviewQuestion[]
+
+  @@unique([externalSource, externalId])
+  @@index([domain, difficulty])
+  @@index([category, topic])
+  @@index([status])
+}
+
+model InterviewSession {
+  id          String              @id @default(uuid())
+  userId      String
+  type        InterviewType
+  domain      Domain
+  difficulty  Difficulty
+  topics      Json
+  status      SessionStatus       @default(CREATED)
+  messages    Json
+  score       Float?
+  feedback    String?
+  startedAt   DateTime?
+  completedAt DateTime?
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  metadata    Json?
+  questions   InterviewQuestion[]
+  user        User                @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+}
+
+model InterviewQuestion {
+  id         String                  @id @default(uuid())
+  sessionId  String
+  questionId String
+  userAnswer String?
+  evaluation String?
+  score      Float?
+  order      Int                     @default(0)
+  status     InterviewQuestionStatus @default(PENDING)
+  question   Question                @relation(fields: [questionId], references: [id])
+  session    InterviewSession        @relation(fields: [sessionId], references: [id])
+
+  @@index([sessionId])
+  @@index([questionId])
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  BANNED
+}
+
+enum InterviewQuestionStatus {
+  PENDING
+  ASKED
+  ANSWERED
+  EVALUATED
+}
+
+enum InterviewType {
+  HR
+  TECHNICAL
+}
+
+enum Domain {
+  DSA
+  WEB_DEV
+  DATA_SCIENCE
+  ML
+  DATA_ANALYST
+  SYSTEM_DESIGN
+  BEHAVIORAL
+  DATABASE
+  CORE_CS
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum SessionStatus {
+  CREATED
+  IN_PROGRESS
+  SUBMITTED
+  EVALUATED
+  COMPLETED
+  REPORTED
+  PENDING_REVIEW
+}
+
+enum QuestionCategory {
+  DSA
+  SYSTEM_DESIGN
+  BEHAVIORAL
+}
+
+enum QuestionStatus {
+  ACTIVE
+  DRAFT
+}
+
+enum QuestionSource {
+  ADMIN
+  IMPORTED
+}
