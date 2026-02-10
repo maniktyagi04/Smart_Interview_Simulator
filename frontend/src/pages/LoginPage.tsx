@@ -41,7 +41,7 @@ const LoginPage: React.FC = () => {
       {/* Left Content Area (Hero/Promo) */}
       <div className="hidden md:flex md:w-5/12 bg-slate-950 p-12 lg:p-16 flex-col justify-center relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/20 via-transparent to-transparent"></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-indigo-500/20 via-transparent to-transparent"></div>
         </div>
         
         <div className="relative z-10">

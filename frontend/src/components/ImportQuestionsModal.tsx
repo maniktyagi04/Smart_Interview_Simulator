@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Download, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import client from '../api/client';
-import { useAuth } from '../store/AuthContext';
+// import { useAuth } from '../store/AuthContext';
 
 interface ImportQuestionsModalProps {
   isOpen: boolean;
@@ -10,7 +10,7 @@ interface ImportQuestionsModalProps {
 }
 
 const ImportQuestionsModal: React.FC<ImportQuestionsModalProps> = ({ isOpen, onClose, onSuccess }) => {
-  const { token } = useAuth();
+  // Removed unused useAuth hook after client migration
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);

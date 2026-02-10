@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { useAuth } from '../store/AuthContext';
+// import { useAuth } from '../store/AuthContext';
 import { 
   Search, Filter, Plus, Edit2, Trash2, 
   Database, Code, Layout, Users, ChevronDown, CheckCircle, 
@@ -27,7 +27,7 @@ interface Question {
 }
 
 const ManageQuestions: React.FC = () => {
-  const { token } = useAuth();
+  // Removed unused useAuth hook after client migration
   
   // State
   const [questions, setQuestions] = useState<Question[]>([]);
