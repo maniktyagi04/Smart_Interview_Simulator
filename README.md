@@ -10,6 +10,10 @@ SIS replicates real interview environments using a structured session engine, mo
 
 ## 🎓 Student Dashboard
 
+<img width="1280" height="666" alt="image" src="https://github.com/user-attachments/assets/fc5575e5-7477-43b4-865e-de9012d635da" />
+<img width="1280" height="666" alt="image" src="https://github.com/user-attachments/assets/fc5575e5-7477-43b4-865e-de9012d635da" />
+
+
 ![Student Dashboard](./assets/student-dashboard.png)
 ![Interview Session](./assets/interview-session.png)
 ![Performance Analytics](./assets/performance-analytics.png)
