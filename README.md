@@ -44,7 +44,7 @@ ___
 
 AI Interview Insights 
 
-<img width="1600" height="799" alt="image" src="https://github.com/user-attachments/assets/fbf4d255-603c-4b43-854b-6743f22cfe15" />
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/fbf4d255-603c-4b43-854b-6743f22cfe15" />
 
 ---
 
