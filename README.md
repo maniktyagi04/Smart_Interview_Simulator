@@ -26,6 +26,13 @@ Performance Analytics
 
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/f958c963-109a-4d00-9e05-2d85e12331ed" />
 
+___
+
+Feedback Report 
+
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/03cfeb25-5521-43dd-84ad-c03a0d14639e" />
+
+
 
 
 ## 🛡 Admin Dashboard
@@ -47,6 +54,13 @@ AI Interview Insights
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/fbf4d255-603c-4b43-854b-6743f22cfe15" />
 
 ---
+
+Interview Sessions 
+
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/24267709-46d7-4fa3-9564-226832153bc8" />
+
+___
+
 
 # 🎯 Problem Statement
 
