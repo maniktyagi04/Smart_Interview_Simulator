@@ -155,3 +155,39 @@ Architecture ensures scalability, separation of concerns, and maintainability.
 
 ## Backend Setup
 
+cd backend
+npm install
+npx prisma generate
+npm run dev
+
+---
+
+## Frontend Setup
+
+cd frontend
+npm install
+npm run dev
+
+---
+
+# 📌 Future Improvements
+
+- Real LLM-powered evaluation integration
+- Live video interview simulation
+- WebSocket-based real-time monitoring
+- Multi-organization support
+- Advanced analytics with ML insights
+
+---
+
+# 📄 License
+
+This project is built for educational and professional portfolio purposes.
+
+---
+
+# 👨‍💻 Author
+
+Manik Tyagi  
+Full-Stack Developer | System Design Enthusiast | Problem Solver
+
