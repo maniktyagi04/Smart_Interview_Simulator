@@ -10,54 +10,61 @@ SIS replicates real interview environments using a structured session engine, mo
 
 ## 🎓 Student Dashboard
 
-Home Page
+<table>
+<tr>
+<td align="center">
+<b>Home Page</b><br/>
+<img src="https://github.com/user-attachments/assets/fc5575e5-7477-43b4-865e-de9012d635da" width="100%" />
+</td>
 
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/fc5575e5-7477-43b4-865e-de9012d635da" />
+<td align="center">
+<b>Start Interview</b><br/>
+<img src="https://github.com/user-attachments/assets/ffbd19e0-46ca-4dcc-a686-b1cf031cd745" width="100%" />
+</td>
+</tr>
 
-___
+<tr>
+<td align="center">
+<b>Performance Analytics</b><br/>
+<img src="https://github.com/user-attachments/assets/f958c963-109a-4d00-9e05-2d85e12331ed" width="100%" />
+</td>
 
-Start Interview 
-
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/ffbd19e0-46ca-4dcc-a686-b1cf031cd745" />
-
-___
-
-Performance Analytics
-
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/f958c963-109a-4d00-9e05-2d85e12331ed" />
-
-___
-
-Feedback Report 
-
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/03cfeb25-5521-43dd-84ad-c03a0d14639e" />
-
-
-
-
-## 🛡 Admin Dashboard
-
-Home Page
-
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/4b4726f9-a1f5-4e25-97a2-29be375abc17" />
-
-___
-
-Manage Questions 
-
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/7def37bd-0682-47ac-861f-e2e4a65fe06d" />
-
-___
-
-AI Interview Insights 
-
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/fbf4d255-603c-4b43-854b-6743f22cfe15" />
+<td align="center">
+<b>Feedback Report</b><br/>
+<img src="https://github.com/user-attachments/assets/03cfeb25-5521-43dd-84ad-c03a0d14639e" width="100%" />
+</td>
+</tr>
+</table>
 
 ---
 
-Interview Sessions 
+## 🛡 Admin Dashboard
 
-<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/24267709-46d7-4fa3-9564-226832153bc8" />
+<table>
+<tr>
+<td align="center">
+<b>Home Page</b><br/>
+<img src="https://github.com/user-attachments/assets/4b4726f9-a1f5-4e25-97a2-29be375abc17" width="100%" />
+</td>
+
+<td align="center">
+<b>Manage Questions</b><br/>
+<img src="https://github.com/user-attachments/assets/7def37bd-0682-47ac-861f-e2e4a65fe06d" width="100%" />
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<b>AI Interview Insights</b><br/>
+<img src="https://github.com/user-attachments/assets/fbf4d255-603c-4b43-854b-6743f22cfe15" width="100%" />
+</td>
+
+<td align="center">
+<b>Interview Sessions</b><br/>
+<img src="https://github.com/user-attachments/assets/24267709-46d7-4fa3-9564-226832153bc8" width="100%" />
+</td>
+</tr>
+</table>
 
 ___
 
